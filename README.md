@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 == README
 
 This README would normally document whatever steps are necessary to get the
@@ -26,3 +27,17 @@ Things you may want to cover:
 
 Please feel free to use a different markup language if you do not plan to run
 <tt>rake doc:app</tt>.
+=======
+#revly
+=====
+###GA WDI NYC Jan 14, Praject 1
+
+##Description
+>social music sharing
+>utilizing the soundcloud api
+
+
+###User Stories
+https://www.pivotaltracker.com/s/projects/1015684
+
+>>>>>>> 5e652b8a335c74249e1efb150c24714076cb25f5
