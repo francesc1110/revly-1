@@ -1,10 +1,9 @@
 class SessionController < ApplicationController
 
-before_action :load_user, only: [:new, :create]
-
+  # login page
   def new
     # if the user is already logged in, redirect to user profile
-    unless @user.nil?
+    unless session[:user_id].nil?
       redirect_to ( user_path(user) )
 
     # otherwise show the login page
@@ -13,27 +12,33 @@ before_action :load_user, only: [:new, :create]
     end
   end
 
+  # user submits a login request
   def create
+    # query database for user with matching email
+    user = User.find_by(email: params[:email])
     # does the user exists and is the password correct?
-    if @user && @user.authenticate(params[:password])
+    if user && user.authenticate(params[:password])
 
       # save the user's id in the session hash
-      session[:user_id] = @user.id
+      session[:user_id] = user.id
 
       # redirect to the user's profile page
-      redirect_to ( user_path(@user) )
+      redirect_to ( root_path )
     else
       #otherwise, the user has entered in an incorrect combo
       @message = "The email and password combination does not match, try again."
       render(:new)
     end
-
   end
 
-private
+  # user logs out
+  def destroy
 
-  def load_user
-    @user = User.find_by(email: params[:email])
+    # nullifies the user's id
+    session[:user_id] = nil
+
+    # then redirects the user back home
+    redirect_to ( root_path )
   end
 
 end

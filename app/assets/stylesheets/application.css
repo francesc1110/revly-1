@@ -11,3 +11,21 @@
  *= require_self
  *= require_tree .
  */
+
+
+a {
+  text-decoration: none;
+}
+
+a:visited {
+}
+
+a:hover {
+}
+
+.nav_bar {
+  margin: 20px;
+  padding: 0px;
+  text-align: center;
+}
+

@@ -1,15 +1,16 @@
 class UsersController < ApplicationController
 
-before_action :load_user, only: [:show]
 
   def new
     @user = User.new
   end
 
+
   def create
     @user = User.new(user_params)
     if @user.save
-      render(:show)
+      session[:user_id] = @user.id
+      redirect_to ( root_path )
     else
       render(:new)
     end
@@ -23,15 +24,14 @@ before_action :load_user, only: [:show]
   def destroy
   end
 
-  end
+end
 
 private
+
+  #security feature to 'white-list' certain params values
   def user_params
     params.require(:user).permit(:first_name, :last_name, :email, :password, :password_confirmation)
   end
 
-  def load_user
-    @user = User.find(params[:id])
-  end
 
 end
