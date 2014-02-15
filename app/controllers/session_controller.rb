@@ -23,11 +23,11 @@ class SessionController < ApplicationController
       session[:user_id] = user.id
 
       # redirect to the user's profile page
-      redirect_to ( root_path )
+      redirect_to root_path
     else
       #otherwise, the user has entered in an incorrect combo
       @message = "The email and password combination does not match, try again."
-      render(:new)
+      render :new
     end
   end
 
@@ -38,7 +38,7 @@ class SessionController < ApplicationController
     session[:user_id] = nil
 
     # then redirects the user back home
-    redirect_to ( root_path )
+    redirect_to root_path
   end
 
 end
