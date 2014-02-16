@@ -12,7 +12,10 @@ RevlyApp::Application.routes.draw do
   delete '/logout', to: "session#destroy"
 
   get '/feed', to: "tiles#index"
-  get '/create_post', to: "tiles#new"
-  post '/create_post', to: "tiles#create"
+
+  get '/tile_search_song', to: "tiles#new"
+  post '/tile_search_song', to: "tiles#select_song"
+  get '/tile_select_song', to: "tiles#select_song"
+  post '/tile_select_song', to: "tiles#write_message"
 
 end
