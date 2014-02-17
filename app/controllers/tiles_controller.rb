@@ -9,9 +9,16 @@ class TilesController < ApplicationController
   def select_song
     client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
     @tracks = client.get("/tracks", q: "#{params[:query]}", limit: 5, order: "hotness")
+
   end
 
   def write_message
+
+  end
+
+  def submit_tile
+    #save tile
+    #redirect to feed
   end
 
   def create
@@ -25,8 +32,6 @@ private
   def tile_params
     params.require(:tile).permit(:message, :track_id, :color, :query)
   end
-
-
 
 
 end

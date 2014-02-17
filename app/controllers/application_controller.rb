@@ -11,5 +11,12 @@ class ApplicationController < ActionController::Base
     current_user.present?
   end
 
-  helper_method :current_user, :logged_in?
+  def song_length_converter(milliseconds)
+    total_seconds = milliseconds.to_f / 1000
+    seconds_placeholder = ( total_seconds % 60 ).to_i
+    minutes_placeholder = ( (total_seconds - seconds_placeholder) / 60 ).to_i
+    track_length = "#{minutes_placeholder}:#{seconds_placeholder}"
+  end
+
+  helper_method :current_user, :logged_in?, :song_length_converter
 end
