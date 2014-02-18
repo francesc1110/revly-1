@@ -3,7 +3,7 @@
   <div id="tile_message">
     <%=tile.message%>
   </div>
-  <div id="music_player">
+  <div class="song" id="song_feed">
     <% track = @client.get("/tracks/#{tile.track_id}") %>
     <p>Title: <%=track.title%> | <strong><%=song_length_converter(track.duration)%></strong></p>
 

@@ -1,7 +1,7 @@
 <h2> Results </h2>
 
 <% @tracks.each do |track| %>
-  <div id="music_player">
+  <div class="song" id="song_search">
 
     <p>Title: <%=track.title%> | <strong><%=song_length_converter(track.duration)%></strong></p>
 

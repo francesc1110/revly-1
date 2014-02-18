@@ -5,7 +5,7 @@ class TilesController < ApplicationController
 
   def search_song
     client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
-    @tracks = client.get("/tracks", q: "#{params[:query]}", limit: 5, order: "hotness")
+    @tracks = client.get("/tracks", q: "#{params[:query]}", limit: 10, order: "hotness")
   end
 
   def write_message
