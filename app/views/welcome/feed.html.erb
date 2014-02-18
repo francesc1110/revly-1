@@ -1,20 +1,17 @@
-<h2> Results </h2>
 
-<% @tracks.each do |track| %>
+<% @tiles.each do |tile| %>
+  <div id="tile_message">
+    <%=tile.message%>
+  </div>
   <div id="music_player">
-
+    <% track = @client.get("/tracks/#{tile.track_id}") %>
     <p>Title: <%=track.title%> | <strong><%=song_length_converter(track.duration)%></strong></p>
 
     <audio controls preload="none">
       <source src="<%=track.stream_url%>?client_id=<%=SOUNDCLOUD_CLIENT_ID%>" />
     </audio>
 
-    <%= form_tag write_message_path do %>
-      <%= hidden_field_tag :track_id, track.id %>
-      <%= hidden_field_tag :track_title, track.title %>
-      <%= submit_tag "Select" %>
-    <% end %>
-
   </div>
+<br/>
 <% end %>
 

@@ -1,6 +1,7 @@
 RevlyApp::Application.routes.draw do
 
-  root "welcome#index"
+  root 'welcome#index'
+  get  '/feed', to: "welcome#feed"
 
   resource :users do
   end

@@ -42,4 +42,9 @@ a:hover {
   resize: none;
   border-radius: 15px;
   outline: none;
+  margin: auto, 0;
+}
+
+#music_player {
+
 }
