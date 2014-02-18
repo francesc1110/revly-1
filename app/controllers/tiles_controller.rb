@@ -3,34 +3,18 @@ class TilesController < ApplicationController
   def index
   end
 
-  def new
-  end
-
-  def select_song
+  def search_song
     client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
     @tracks = client.get("/tracks", q: "#{params[:query]}", limit: 5, order: "hotness")
-
   end
 
   def write_message
-
-  end
-
-  def submit_tile
-    #save tile
-    #redirect to feed
   end
 
   def create
-    user = User.find(session[:id])
-    user.tiles.create(tile_params)
-  end
-
-private
-
-  #security feature to 'white-list' certain params values
-  def tile_params
-    params.require(:tile).permit(:message, :track_id, :color, :query)
+    user = User.find(session[:user_id])
+    user.tiles.create(message: params[:tile_message], track_id: params[:track_id])
+    redirect_to root_path
   end
 
 

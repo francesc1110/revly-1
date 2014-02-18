@@ -9,10 +9,10 @@
       <source src="<%=track.stream_url%>?client_id=<%=SOUNDCLOUD_CLIENT_ID%>" />
     </audio>
 
-    <%= form_tag "/tile_select_song", method: "post" do %>
-      <%= hidden_field_tag(:track_id, track.id) %>
-      <%= hidden_field_tag(:track_title, track.title) %>
-      <%= submit_tag("Select") %>
+    <%= form_tag write_message_path do %>
+      <%= hidden_field_tag :track_id, track.id %>
+      <%= hidden_field_tag :track_title, track.title %>
+      <%= submit_tag "Select" %>
     <% end %>
 
   </div>

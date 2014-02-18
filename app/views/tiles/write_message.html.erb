@@ -1,10 +1,10 @@
-<h1> Include a message </h1>
+<h3> You've selected: <em><%=params[:track_title]%></em> </h3>
+<h3> Compose a message: </h3>
 
-<h2> You've selected: </h2>
-<h3>"<%=params[:track_title]%>" </h3>
-<h2> What does this song make you want to do? </h2>
-
-<%= form_tag do %>
-
+<%= form_tag create_tile_path do %>
+  <%= text_area_tag :tile_message %>
+  <%= hidden_field_tag :track_id, params[:track_id] %>
+  <br/>
+  <%= submit_tag "Post" %>
 <% end %>
 
