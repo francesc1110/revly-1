@@ -14,5 +14,4 @@ ilias.save
 scar = User.new(first_name: "Scarlett", last_name: "Stack", email: "s@stack.com", password: "kittens", password_confirmation: "kittens")
 scar.save
 
-ilias.tiles.create(message: "Holdin it down at GA, afterhours", track_id: "123", color: "#AAF340")
-scar.tiles.create(message: "Feelin' so good after some yoga", track_id: "456", color: "#D4C4FA")
+ilias.tiles.create(message: "Hello world.", track_id: "111382476")

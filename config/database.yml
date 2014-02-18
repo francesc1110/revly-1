@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
-  host: localhost
+  encoding: unicode
   database: revly_db
   pool: 5
-  timeout: 5000
+  password:
