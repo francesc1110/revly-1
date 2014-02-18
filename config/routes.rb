@@ -18,5 +18,4 @@ RevlyApp::Application.routes.draw do
   post '/write_message', to: "tiles#write_message"
   post '/create_tile', to: "tiles#create"
 
-
 end

@@ -1,17 +1,32 @@
 <% @tiles.each do |tile| %>
   <div class="tile_message">
     <%=tile.message%>
-    <div class="play-button">
+    <div class="play-button" data-track="<%= tile.track_id %>">
       <div class="triangle"></div>
     </div>
   </div>
-  <div class="song" id="song_feed">
-    <% track = @client.get("/tracks/#{tile.track_id}") %>
+  <% track = @client.get("/tracks/#{tile.track_id}") %>
+  <div class="song song_feed" >
+
     <p>Title: <%=track.title%> | <strong><%=song_length_converter(track.duration)%></strong></p>
 
-    <audio controls preload="none">
+    <audio controls preload="none" id="<%= tile.track_id %>">
       <source src="<%=track.stream_url%>?client_id=<%=SOUNDCLOUD_CLIENT_ID%>" />
     </audio>
   </div>
   <br/>
 <% end %>
+
+<script type="text/javascript">
+  $(".play-button").click(function(e){
+
+    trackId = $(e.currentTarget).data('track');
+    $("audio").each(function(index, el){
+      el.pause();
+    });
+    document.getElementById(trackId).play();
+  });
+
+  //also when you click a play-button, remove the class play button from the div and
+  //replace it with a class pause-button
+</script>

@@ -13,7 +13,8 @@ class TilesController < ApplicationController
 
   def create
     user = User.find(session[:user_id])
-    user.tiles.create(message: params[:tile_message], track_id: params[:track_id])
+    user.tiles.create(message: params[:tile_message_write], track_id: params[:track_id])
+    binding.pry
     redirect_to root_path
   end
 

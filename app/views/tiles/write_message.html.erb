@@ -2,7 +2,7 @@
 <h3> Compose a message: </h3>
 
 <%= form_tag create_tile_path do %>
-  <%= text_area_tag :tile_message %>
+  <%= text_area_tag :tile_message_write %>
   <%= hidden_field_tag :track_id, params[:track_id] %>
   <br/>
   <%= submit_tag "Post" %>
