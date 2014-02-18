@@ -1,7 +1,6 @@
 development:
   adapter: postgresql
   host: localhost
-  user: eLights
   database: revly_db
   pool: 5
   timeout: 5000
