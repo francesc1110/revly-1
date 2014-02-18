@@ -9,7 +9,8 @@ class WelcomeController < ApplicationController
   end
 
   def feed
-    @tiles = Tile.all
+    # @tiles = Tile.all.sort_by &:created_at
+    @tiles = Tile.order("created_at DESC")
     @client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
   end
 

@@ -12,9 +12,10 @@
     <%= form_tag write_message_path do %>
       <%= hidden_field_tag :track_id, track.id %>
       <%= hidden_field_tag :track_title, track.title %>
-      <%= submit_tag "Select" %>
+      <%= submit_tag "Select", class: "select_button" %>
     <% end %>
-
   </div>
+  <br/>
+  <br/>
 <% end %>
 

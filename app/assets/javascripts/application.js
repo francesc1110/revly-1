@@ -14,3 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
+
+var list = document.querySelector('div#tile_message');
+list.addEventListener('click', function(ev) {
+  if( ev.target.tagName === 'tile_message') {
+     ev.target.classList.toggle('done');
+  }
+}, false);

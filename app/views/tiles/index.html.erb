@@ -1,9 +1,6 @@
 <h1>Create a Tile!</h1>
-
-<h2>Search your Sound</h2>
-
-  <%= form_tag "/search_song" do %>
+  <%= form_tag "/search_song", class: "form" do %>
     <%= label_tag :query, "Search a sound:" %>
     <%= text_field_tag :query %>
-    <%= submit_tag "Continue" %>
+    <%= submit_tag "Continue", class: "search_button" %>
   <% end %>
