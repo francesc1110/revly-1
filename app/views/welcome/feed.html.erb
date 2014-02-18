@@ -8,7 +8,7 @@
   <% track = @client.get("/tracks/#{tile.track_id}") %>
   <div class="song song_feed" >
 
-    <p>Title: <%=track.title%> | <strong><%=song_length_converter(track.duration)%></strong></p>
+    <p><%=track.title%> | <strong><%=song_length_converter(track.duration)%></strong></p>
 
     <audio controls preload="none" id="<%= tile.track_id %>">
       <source src="<%=track.stream_url%>?client_id=<%=SOUNDCLOUD_CLIENT_ID%>" />

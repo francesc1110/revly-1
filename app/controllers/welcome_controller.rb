@@ -1,16 +1,20 @@
 class WelcomeController < ApplicationController
 
   def index
-    if :logged_in?
+    if session[:user_id] != nil
       redirect_to feed_path
     else
-      render :index
+      render(:index)
     end
   end
 
   def feed
-    @tiles = Tile.order("created_at DESC")
-    @client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
+    if session[:user_id] == nil
+      redirect_to root_path
+    else
+      @tiles = Tile.order("created_at DESC")
+      @client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
+    end
   end
 
 end

@@ -24,6 +24,10 @@ h1, h2, h3, h4, h5, h6, p, .form {
   padding: 0 0 0 10px;
 }
 
+h1 {
+  text-align: center;
+}
+
 a {
   text-decoration: none;
   color: #5A7E91;
@@ -33,6 +37,16 @@ a {
 a:hover {
   color: #B7E6FF;
   tranisition: 0.3s;
+}
+
+a.sign_up {
+  color: #FFFFEE;
+  font-size: .75em;
+}
+
+h1 a.sign_up:hover {
+  color: #B7E6FF;
+  font-size: .75em;
 }
 
 .nav_bar {
@@ -52,6 +66,18 @@ a:hover {
   height: 60px;
 }
 
+.new_user {
+  margin: 0 auto;
+  position: relative;
+  width: 140px;
+}
+
+.form {
+  margin: 0 auto;
+  position: relative;
+  width: 140px;
+}
+
 .tile_message {
   width: 300px;
   height: 300px;
@@ -66,6 +92,73 @@ a:hover {
   margin: 0 auto;
   word-wrap: break-word;
   position: relative;
+}
+
+.song {
+  color: #E4F2FF;
+  background-color: #112630;
+  text-align: center;
+  margin: 0 auto;
+  height: 70px;
+  width: 50%;
+  border-radius: 10px;
+  min-width: 360px;
+  position: relative;
+  display: none;
+}
+
+.song p {
+  font-family: lucida grande;
+  font-size: .8em;
+  padding: 3px 0;
+}
+
+
+.tile_message:hover + .song.song_feed{
+  display: inline;
+}
+
+.tile_message:hover .play-button {
+  opacity: 0.5;
+  transition: 0.75s;
+}
+
+audio {
+  width: 95%;
+  position: absolute;
+  left: 9px;
+  bottom: 3px;
+}
+
+.play-button {
+  width: 150px;
+  height: 150px;
+  border: 10px solid navy;
+  position:  absolute;
+  left: 75px;
+  top: 75px;
+  border-radius: 100px;
+  opacity: 0;
+  transition: 0.75s;
+  cursor: pointer;
+}
+
+
+.triangle {
+  width: 0px;
+  height: 0px;
+  margin-left: 50%;
+  margin-top: 50%;
+  left: -27px;
+  top: -50px;
+  position: relative;
+  border-top: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 80px solid navy;
+  z-index: 2;
+  -webkit-transition: all .3s;
+  -moz-transition: all .3s;
+  transition: all .3s;
 }
 
 #tile_message_write {
@@ -84,31 +177,9 @@ a:hover {
   position: relative;
 }
 
-
-.song {
-  color: #E4F2FF;
-  background-color: #112630;
-  text-align: center;
-  margin: 2px auto;
-  height: 70px;
-  border-radius: 10px;
-  font-family: lucida grande;
-  font-weight: 300;
-}
-
-.song_feed {
-  width: 50%;
-  min-width: 360px;
-  display: none;
-}
-
 #song_search {
   width: 80%;
   min-width: 300px;
-}
-
-audio {
-  width: 95%;
 }
 
 .search_button, .select_button{
@@ -122,39 +193,4 @@ audio {
 
 .search_button:hover, .select_button:hover{
   color: #B7E6FF;
-}
-
-.play-button {
-  width: 150px;
-  height: 150px;
-  border: 10px solid navy;
-  position:  absolute;
-  left: 75px;
-  top: 75px;
-  border-radius: 100px;
-  opacity: 0;
-  transition: 0.75s;
-  cursor: pointer;
-}
-
-.tile_message:hover .play-button {
-  opacity: 0.5;
-  transition: 0.75s;
-}
-
-.triangle {
-  width: 0px;
-  height: 0px;
-  margin-left: 50%;
-  margin-top: 50%;
-  left: -27px;
-  top: -50px;
-  position: relative;
-  border-top: 50px solid transparent;
-  border-bottom: 50px solid transparent;
-  border-left: 80px solid navy;
-  z-index: 2;
-  -webkit-transition: all .3s;
-  -moz-transition: all .3s;
-  transition: all .3s;
 }
