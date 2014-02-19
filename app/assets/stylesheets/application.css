@@ -206,3 +206,9 @@ audio {
  margin: 0 auto;
  width: 10%;
 }
+
+.center {
+  text-align: center;
+  width: 50%;
+  margin: 0 auto;
+}

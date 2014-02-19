@@ -17,5 +17,15 @@ class TilesController < ApplicationController
     redirect_to root_path
   end
 
+  def history
+    @client = Soundcloud.new(client_id: SOUNDCLOUD_CLIENT_ID)
+    @user_tiles = Tile.where(user_id: session[:user_id]).order("created_at DESC")
+  end
+
+  def destroy
+    tile = Tile.find(params[:format])
+    tile.destroy
+    redirect_to tile_history_path
+  end
 
 end

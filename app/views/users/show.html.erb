@@ -1,1 +1,8 @@
-<h1>Welcome <%= current_user.first_name %></h1>
+<h1>Welcome <%=@user.first_name%></h1>
+
+<div class="center">
+  <h3><%=link_to "Tile History", tile_history_path %></h3>
+  <h3><%=link_to "Edit Profile", edit_profile_path %></h3>
+  <h3><%=link_to "Delete Profile", delete_profile_path, method: :delete, data: {confirm: "You sure you want to do this? It's been real..."} %></h3>
+  <h3><%=link_to "Send us feedback", feedback_path %></h3>
+</div>

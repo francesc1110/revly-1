@@ -1,6 +1,6 @@
 development:
   adapter: postgresql
   encoding: unicode
-  database: revly_db
+  database: revly_development
   pool: 5
   password:

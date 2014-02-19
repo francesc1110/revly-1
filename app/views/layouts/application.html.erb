@@ -11,12 +11,13 @@
 
 <!-- Persistant Navigation Bar -->
   <header class="nav_bar">
-    <%= link_to"Home", root_path, class: "nav" %> |
+    <%= link_to "Home", root_path, class: "nav" %> |
 
     <!-- Logic to dynamically display correct log in/out option -->
     <% if logged_in? %>
       <%= link_to "Create a Tile", new_tile_path, class: "nav" %> |
-      <%= link_to "Log out", logout_path, method: "delete", class: "nav" %>
+      <%= link_to "Your profile", profile_path, class: "nav" %> |
+      <%= link_to "Log out", logout_path, method: :delete, class: "nav" %>
     <% else %>
       <%= link_to "Log In", "/login", class: "nav" %>
     <% end %>

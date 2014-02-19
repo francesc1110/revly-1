@@ -5,7 +5,6 @@ class UsersController < ApplicationController
     @user = User.new
   end
 
-
   def create
     @user = User.new(user_params)
     if @user.save
@@ -14,17 +13,27 @@ class UsersController < ApplicationController
     else
       render :new
     end
+  end
 
   def show
+    @user = User.find(session[:user_id])
+  end
+
+  def edit
   end
 
   def update
   end
 
   def destroy
+    session[:user_id] = nil
+    user = User.find(session[:user_id])
+    user.destroy
+    redirect_to root_path
   end
 
-end
+  def feedback
+  end
 
 private
 
