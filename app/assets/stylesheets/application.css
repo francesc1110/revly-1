@@ -104,13 +104,23 @@ h1 a.sign_up:hover {
   border-radius: 10px;
   min-width: 360px;
   position: relative;
-  display: none;
 }
 
 .song p {
   font-family: lucida grande;
   font-size: .8em;
   padding: 3px 0;
+}
+
+.song.song_search {
+  width: 80%;
+  min-width: 300px;
+}
+
+.song.song_feed {
+  width: 80%;
+  min-width: 300px;
+  display: none;
 }
 
 
@@ -164,7 +174,7 @@ audio {
 #tile_message_write {
   width: 300px;
   height: 300px;
-  background-color: #DDD;
+  background-color: #EFEFEF;
   border-style:none;
   writing-mode: rl-tb;
   font-size: 2.75em;
@@ -177,20 +187,22 @@ audio {
   position: relative;
 }
 
-#song_search {
-  width: 80%;
-  min-width: 300px;
-}
 
 .search_button, .select_button{
   border-radius: 5px;
   border: none;
   margin: 10px;
-  background-color: #199933;
   color: #404C49;
-  box-shadow: 3px 3px 8px #0E571D;
+  transition: .5s;
 }
 
 .search_button:hover, .select_button:hover{
-  color: #B7E6FF;
+  color: #337FAC;
+  transition: .5s;
+}
+
+.select_form {
+ float: bottom;
+ margin: 0 auto;
+ width: 10%;
 }

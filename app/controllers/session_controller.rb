@@ -33,7 +33,6 @@ class SessionController < ApplicationController
 
   # user logs out
   def destroy
-
     # nullifies the user's id
     session[:user_id] = nil
 

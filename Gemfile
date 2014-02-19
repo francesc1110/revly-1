@@ -53,5 +53,7 @@ gem 'bcrypt-ruby', '~> 3.1.2'
 # Query soundcloud API
 gem 'soundcloud'
 
+gem 'unicorn'
+
 # Heroku compatibility
 ruby "2.0.0"
