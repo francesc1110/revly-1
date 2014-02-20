@@ -3,7 +3,7 @@
 ### GA WDI NYC Jan 14, Praject 1
 
 ### Overview
-**Revly** is an application for socially sharing music moments. Revly was developed by Ilias Tsangaris in the January 2014 Web Development Immersive Course at General Assembly. Francisco Echeverri is also credited as having helped the development of the origional idea. The app as you see it was developed over a 3 day sprint to model the agile software development process. [ERB](http://i.imgur.com/RVPL5cv.png).
+**Revly** is an application for socially sharing music moments. Revly was developed by Ilias Tsangaris in the January 2014 Web Development Immersive Course at General Assembly. Francisco Echeverri is also credited as having helped the development of the origional idea. The app as you see it was developed over a 3 day sprint to model the agile software development process. [ERB](http://i.imgur.com/0IWlpxJ.png).
 
 ### Technologies Used
 * Ruby 2.1.0
