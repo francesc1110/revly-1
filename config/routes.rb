@@ -3,7 +3,7 @@ RevlyApp::Application.routes.draw do
   root 'welcome#index'
   get  '/feed', to: "welcome#feed"
 
-  resource :users, except: [:new, :show, :edit]
+  resource :users, except: [:new, :show, :edit, :destroy]
   get '/signup', to: "users#new"
   get '/profile', to: "users#show"
   get '/edit_profile', to: "users#edit"

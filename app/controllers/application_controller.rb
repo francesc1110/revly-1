@@ -12,14 +12,7 @@ class ApplicationController < ActionController::Base
   end
 
   def song_length_converter(milliseconds)
-    total_seconds = milliseconds.to_f / 1000
-    seconds_placeholder = ( total_seconds % 60 ).to_i
-    minutes_placeholder = ( (total_seconds - seconds_placeholder) / 60 ).to_i
-    if seconds_placeholder <= 9
-      track_length = "#{minutes_placeholder}:0#{seconds_placeholder}"
-    else
-      track_length = "#{minutes_placeholder}:#{seconds_placeholder}"
-    end
+    Time.at(milliseconds/1000).strftime "%M:%S"
   end
 
   helper_method :current_user, :logged_in?, :song_length_converter

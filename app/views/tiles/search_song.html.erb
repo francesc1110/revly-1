@@ -9,7 +9,7 @@
       </audio>
 
   </div>
-  <%= form_tag write_message_path, class: "select_form" do %>
+  <%= form_tag write_message_path(track), class: "select_form" do %>
     <%= hidden_field_tag :track_id, track.id %>
     <%= hidden_field_tag :track_title, track.title %>
     <%= submit_tag "Select", class: "select_button" %>

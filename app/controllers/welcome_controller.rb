@@ -1,7 +1,7 @@
 class WelcomeController < ApplicationController
 
   def index
-    if session[:user_id] != nil
+    if logged_in?
       redirect_to feed_path
     else
       render(:index)
@@ -9,7 +9,7 @@ class WelcomeController < ApplicationController
   end
 
   def feed
-    if session[:user_id] == nil
+    unless logged_in?
       redirect_to root_path
     else
       @tiles = Tile.order("created_at DESC")

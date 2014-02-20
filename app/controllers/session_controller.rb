@@ -3,7 +3,7 @@ class SessionController < ApplicationController
   # login page
   def new
     # if the user is already logged in, redirect to user profile
-    unless session[:user_id].nil?
+    if logged_in?
       redirect_to root_path
 
     # otherwise show the login page
