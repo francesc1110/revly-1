@@ -17,3 +17,6 @@
 
 # Ignore the database file
 /config/database.yml
+
+#Ignore coverage reports
+/coverage

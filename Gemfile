@@ -6,9 +6,6 @@ gem 'rails', '4.0.2'
 # Postgres translator
 gem 'pg'
 
-# Debugging
-gem 'pry-rails', group: [:development, :test]
-
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -55,5 +52,17 @@ gem 'soundcloud'
 
 gem 'unicorn'
 
-# Heroku compatibility
-ruby "2.0.0"
+group :development, :test do
+  gem 'pry-rails'
+  gem 'rspec-rails'
+  gem 'nyan-cat-formatter'
+  gem 'shoulda-matchers'
+  gem 'capybara'
+  gem 'launchy'
+  gem 'factory_girl_rails'
+  gem 'ffaker'
+  gem 'simplecov'
+end
+
+# # NOTE: for Heroku compatibility, it should be 2.0.0
+# ruby "2.1.0"
